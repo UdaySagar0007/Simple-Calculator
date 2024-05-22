@@ -23,3 +23,5 @@
        dest: /home/ansadmin
    - name : K8S Deployment
      command: kubectl apply -f k8s-deploy.yml
+
+
