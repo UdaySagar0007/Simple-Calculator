@@ -86,7 +86,7 @@
         <td style="background-color: #d0f0c0;">Data Science</td>
       </tr>
       <tr>
-        <td style="background-color: #f0e0ff;">DEVOPS</td>
+        <td style="background-color: #f0e0ff;">DEVOPS METHODOLGIES</td>
       </tr>
       <tr>
         <td style="background-color: #f8ddc0;">Full Stack Python</td>
