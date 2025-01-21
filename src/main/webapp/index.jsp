@@ -80,7 +80,7 @@
         <td style="background-color: #f7e3b6;">C Programming</td>
       </tr>
       <tr>
-        <td style="background-color: #c9e5f9;">LINUX</td>
+        <td style="background-color: #c9e5f9;">LINUX-PROGRAMMING</td>
       </tr>
       <tr>
         <td style="background-color: #d0f0c0;">Data Science</td>
