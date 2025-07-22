@@ -6,10 +6,12 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 # Ensure 'target/maven-web-app.war' is the correct output path/name from your Maven build
-RUN mvn clean package -DskipTests # Build the WAR file. -DskipTests is optional.
+RUN mvn clean package -DskipTests 
+# Build the WAR file.-DskipTests is optional.
 
 # Stage 2: Create a lightweight final image containing only the WAR
-FROM alpine:latest # Or scratch, or a minimal JRE if your app needs it
+FROM alpine:latest 
+#Or scratch, or a minimal JRE if your app needs it
 LABEL maintainer="uday"
 
 # Create a directory to store the WAR
