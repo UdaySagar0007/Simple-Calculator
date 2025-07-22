@@ -1,101 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PYTHONLIFE-DEVOPS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      text-align: center;
-      margin-top: 50px;
-    }
-    h1 {
-      color: #ff5733;
-    }
-    h2 {
-      color: #4CAF50;
-    }
-    h3 {
-      color: #3498db;
-    }
-    a {
-      display: block;
-      color: #2980b9;
-      text-decoration: none;
-      margin-top: 20px;
-      font-size: 18px;
-    }
-    a:hover {
-      color: #1abc9c;
-    }
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      width: 80%;
-    }
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    tr:hover {
-      background-color: #f5f5f5;
-    }
-    td {
-      background-color: #ffffff;
-    }
-  </style>
-  <script>
-    function toggleCourseDetails() {
-      var details = document.getElementById("courseDetails");
-      if (details.style.display === "none") {
-        details.style.display = "block";
-      } else {
-        details.style.display = "none";
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .result {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            text-align: right;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .numbers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 70%;
+        }
+        .operands {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 25%;
+        }
+        button {
+            height: 50px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3b4307;
+        }
+        .operator {
+            background-color: #28a745;
+        }
+        .operator:hover {
+            background-color: #1e7e34;
+        }
+        .clear {
+            background-color: #dc3545;
+        }
+        .clear:hover {
+            background-color: #bd2130;
+        }
+        
+    </style>
 </head>
 <body>
-  <marquee behavior="scroll" direction="left" style="background-color: #e74c3c; color: white; padding: 10px;">
-    Learn here, lead anywhere. At PYTHONLIFE-DEVOPS, we don't just teach skills, we ignite careers. Join us and discover the limitless opportunities awaiting you in the world of Python and DevOps - Welcome to PYTHONLIFE-DEVOPS - Your gateway to Python and DevOps expertise!
-  </marquee>
-  <h1>Welcome to <span style="color: #ff5733;">PYTHONLIFE-DEVOPS</span></h1>
-  <a href="#" onclick="toggleCourseDetails()">Click Here To See Pythonlife Training Schedules</a>
-  <div class="course-details" id="courseDetails" style="display: none;">
-    <h2>Course Details:</h2>
-    <table>
-      <tr>
-        <th>Course</th>
-      </tr>
-      <tr>
-        <td style="background-color: #f9c2cc;">JAVA WITH SQL</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f7e3b6;">C Programming</td>
-      </tr>
-      <tr>
-        <td style="background-color: #c9e5f9;">LINUX-PROGRAMMING</td>
-      </tr>
-      <tr>
-        <td style="background-color: #d0f0c0;">Data Science</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f0e0ff;">DEVOPS METHODOLGIES</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f8ddc0;">Full Stack Python</td>
-      </tr>
-    </table>
-  </div>
-  <h2>Call Us : <span style="color: #4CAF50;">+9876543210</span></h2>
-  <h3>Hyderabad</h3>
-  <p>Sri Satya Sai Nilayam, Siddiq Nagar,<br>HITECH City,<br>Hyderabad</p>
-  <p>&copy; Pythonlife@2024</p>
+    <div class="calculator">
+        <input type="text" id="result" class="result" disabled>
+        <div class="buttons">
+            <div class="numbers">
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+                <button onclick="appendValue('.')">.</button>
+            </div>
+            <div class="operands">
+                <button onclick="clearResult()" class="clear">C</button>
+                <button onclick="appendValue('/')" class="operator">/</button>
+                <button onclick="appendValue('*')" class="operator">*</button>
+                <button onclick="appendValue('-')" class="operator">-</button>
+                <button onclick="appendValue('+')" class="operator">+</button>
+                <button onclick="calculateResult()" class="operator">=</button>
+                <button onclick="deleteLast()">DEL</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const resultField = document.getElementById('result');
+
+        function appendValue(value) {
+            resultField.value += value;
+        }
+
+        function clearResult() {
+            resultField.value = '';
+        }
+
+        function deleteLast() {
+            resultField.value = resultField.value.slice(0, -1);
+        }
+
+        function calculateResult() {
+            try {
+                resultField.value = eval(resultField.value);
+            } catch {
+                resultField.value = 'Error';
+            }
+        }
+    </script>
+    
 </body>
 </html>
