@@ -1,6 +1,7 @@
 # Stage 1: Build the application with Maven
-FROM maven:3.8.7-jdk11 AS build  # Use a Maven image with a suitable JDK version (e.g., JDK 11)
-                                # Adjust '3.8.7-jdk11' to match your project's Java and Maven versions
+FROM maven:3.8.7-jdk11 AS build  
+#Use a Maven image with a suitable JDK version (e.g., JDK 11)
+#Adjust '3.8.7-jdk11' to match your project's Java and Maven versions
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
