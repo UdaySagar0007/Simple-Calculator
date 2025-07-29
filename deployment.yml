@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: calculator
+  name: calculator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      containers:
+      - image: dockersamples/examplevotingapp_result
+        name: calculator
+        ports:
+        - containerPort: 8080
+          name: calculator
