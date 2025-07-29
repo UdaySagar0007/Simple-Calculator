@@ -15,7 +15,7 @@ spec:
         app: calculator
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result
+      - image: udaysagarv/webapp
         name: calculator
         ports:
         - containerPort: 8080
